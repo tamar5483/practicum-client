@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import ExcelExport from "./ExcelExport"
 import  { userContext } from "./UserContext"
 
 
@@ -11,7 +10,6 @@ export default()=>{
         <h1>
             Thank You For Giving Us Your Details!
         </h1>
-        {/* <ExcelExport excelData={{user:userCtxt.user,children:userCtxt.children}} fileName={"Excel"}/> */}
         </div>
     )
 }

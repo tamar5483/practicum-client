@@ -1,12 +1,11 @@
-import { useForm } from "react-hook-form";
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import { userContext } from "./UserContext";
 
 
-export default ({ index ,register,errors}) => {
+export default ({ index /*,register,errors*/}) => {
 
     const userCtxt = useContext(userContext);
-
+    
 
     return (
         <div style={{ marginTop:"20%"}}>
@@ -16,9 +15,9 @@ export default ({ index ,register,errors}) => {
           
             <div >
                 <label>Name</label>
-                <input className="form-control"
+                <input className="form-control" 
                        defaultValue={userCtxt.children[index].name}
-                       {...register('firstName',  {required:{value:true,message:"name is requierd"}})}
+                     // {...register('firstName',  {required:{value:true,message:"name is requierd"}})}
                        name={`childName${index}`} 
                        onChange={(e) => {
                        const children = userCtxt.children;
@@ -27,7 +26,7 @@ export default ({ index ,register,errors}) => {
 
                     }} /> 
                 <small className="text-danger">
-                    {errors?.name && errors.name.message}
+                    {/* {errors?.name && errors.name.message} */}
                 </small>
             </div>
 
@@ -35,9 +34,9 @@ export default ({ index ,register,errors}) => {
                 <label>Identity</label>
                 <input className="form-control"
                        defaultValue={userCtxt.children[index].identity}
-                       {...register('identity',  {required:{value:true,message:"identity is requierd"},
-                       minLength:{value:9,message:"identity must have 9 digits"},
-                        maxLength:{value:9,message:"identity must have 9 digits"}})}
+                    //    {...register('identity',  {required:{value:true,message:"identity is requierd"},
+                    //    minLength:{value:9,message:"identity must have 9 digits"},
+                        // maxLength:{value:9,message:"identity must have 9 digits"}})}
                        name={`childIdentity${index}`}
                        onChange={(e) => {
                        const children = userCtxt.children;
@@ -45,7 +44,7 @@ export default ({ index ,register,errors}) => {
                        userCtxt.setChildren(children)
                     }} />
                 <small className="text-danger">
-                    {errors?.identity && errors.identity.message}
+                    {/* {errors?.identity && errors.identity.message} */}
                 </small>
             </div>
 
@@ -53,7 +52,7 @@ export default ({ index ,register,errors}) => {
                 <label>Birthdate</label>
                 <input className="form-control"
                        defaultValue={userCtxt.children[index].birthdate}
-                       {...register('birthdate', {required:{value:true,message:"name is requierd"}})}
+                    //    {...register('birthdate', {required:{value:true,message:"name is requierd"}})}
                        type="date" name={`childBirthDate${index}`} 
                        onChange={(e) => {
                        const children = userCtxt.children;
@@ -61,7 +60,7 @@ export default ({ index ,register,errors}) => {
                        userCtxt.setChildren(children)
                     }} />
                 <small className="text-danger">
-                    {errors?.birthdate && errors.birthdate.message}
+                    {/* {errors?.birthdate && errors.birthdate.message} */}
                 </small>
             </div>
 

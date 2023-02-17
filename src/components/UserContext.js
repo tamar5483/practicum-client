@@ -11,7 +11,7 @@ export default function UserContext(props){
     Identity: null,
     Gender: null,
     BirthDate: null,
-    HMO: "0"
+    HMO: ""
   });
    const[children,setChildren]=useState([])
    const [childrenElements, setChildrenElements] = useState([]);
